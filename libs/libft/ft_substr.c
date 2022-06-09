@@ -6,7 +6,7 @@
 /*   By: fbruggem <fbruggem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/27 11:35:06 by fbruggem          #+#    #+#             */
-/*   Updated: 2022/03/31 14:18:41 by fbruggem         ###   ########.fr       */
+/*   Updated: 2022/06/09 16:14:41 by fbruggem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	char	*str;
 	size_t	i;
 
-	str = malloc(len + 1);
+	str = ft_calloc(1, len + 1);
 	if (!str || !s)
 		return (0);
 	if (ft_strlen(s) < start)

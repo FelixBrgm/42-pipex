@@ -1,31 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   pipex.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fbruggem <fbruggem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/27 10:36:29 by fbruggem          #+#    #+#             */
-/*   Updated: 2022/06/09 16:13:35 by fbruggem         ###   ########.fr       */
+/*   Created: 2022/06/08 17:15:19 by fbruggem          #+#    #+#             */
+/*   Updated: 2022/06/09 09:32:05 by fbruggem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#ifndef PIPEX_H
+# define PIPEX_H
 
-char	*ft_strdup(const char *s1)
+# include "libs/libs.h"
+# include <unistd.h>
+
+typedef struct s_input
 {
-	char	*mem;
-	int		i;
+	char	*cmd1;
+	char	*cmd2;
+	char	*cmd1_dst;
+	char	*cmd2_dst;
+	char	*file1;
+	char	*file2;
+}				t_input;
 
-	i = 0;
-	mem = ft_calloc(1, ft_strlen(s1) + 1);
-	if (!mem)
-		return (NULL);
-	while (s1[i] != '\0')
-	{	
-		mem[i] = s1[i];
-		i++;
-	}
-	mem[i] = '\0';
-	return (mem);
-}
+#endif
