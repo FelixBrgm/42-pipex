@@ -1,7 +1,8 @@
 CFLAGS := -Wall -Werror -Wextra
 AR := ar rcs
 
-CFILES :=  pipex.c
+CFILES :=  pipex.c children.c
+CFILES := $(addprefix src/, $(CFILES))
 OFILES := $(CFILES:.c=.o)
 
 NAME = pipex
@@ -12,7 +13,7 @@ all: $(NAME)
 
 $(NAME): $(OFILES)
 	make -C $(LIBS)
-	gcc $(CFLAGS) pipex.c -o $(NAME) -L $(LIBS) -l s
+	gcc $(CFLAGS) $(OFILES) -o $(NAME) -L $(LIBS) -l s
 
 clean: 
 	make clean -C $(LIBS)
@@ -26,3 +27,4 @@ fclean: clean
 
 re: fclean all
 
+.SILENT:

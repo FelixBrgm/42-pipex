@@ -6,7 +6,7 @@
 /*   By: fbruggem <fbruggem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 08:50:35 by fbruggem          #+#    #+#             */
-/*   Updated: 2022/06/09 09:54:32 by fbruggem         ###   ########.fr       */
+/*   Updated: 2022/06/10 10:08:44 by fbruggem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,5 +71,6 @@ void	ft_lstclear(t_list **lst, void (*del)(void*));
 int		ft_2ptrlen(void **ptr);
 int		ft_protect(int n, ...);
 void	ft_free_split(char **split);
+int		ft_fileexists(char *path);
 
 #endif
