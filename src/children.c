@@ -6,7 +6,7 @@
 /*   By: fbruggem <fbruggem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/11 12:06:49 by fbruggem          #+#    #+#             */
-/*   Updated: 2022/06/11 12:18:41 by fbruggem         ###   ########.fr       */
+/*   Updated: 2022/06/12 10:22:29 by fbruggem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,9 @@ void	child_first(t_input *input, char** env, int fd[2])
 
 void	child_last(t_input *input, char** env, int fd[2])
 {
-	fclose(fopen(input->file2, "w"));
+	unlink(input->file2);
+	if (0 > open(input->file2, O_WRONLY))
+		open(input->file2, O_CREAT);
 	int fdd = open(input->file2, O_RDWR);
 	dup2(fd[0], STDIN_FILENO);
 	dup2(fdd, STDOUT_FILENO);
