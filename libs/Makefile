@@ -1,6 +1,6 @@
 AR := ar rcs
 
-NAME = libs
+NAME = libs.a
 
 LIBFT := libft
 PRINTF := printf
@@ -36,13 +36,13 @@ OFILES := $(CFILES:.c=.o)
 all: $(NAME)
 
 $(NAME): $(OFILES)
-	$(AR) $(NAME).a $(OFILES)
+	$(AR) $(NAME) $(OFILES)
 
 clean: 
 	rm -f $(OFILES)
 
 fclean: clean
-	rm -f $(NAME).a
+	rm -f $(NAME)
 
 re: fclean all
 
